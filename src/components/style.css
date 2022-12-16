@@ -1,0 +1,40 @@
+* {
+    font-size: 1.05em;
+}
+
+.wrapper {
+    margin-top     : 2em;
+    margin-left    : 2em;
+    padding        : 1em;
+    display        : flex;
+    gap            : 1em;
+    justify-content: flex-start;
+    flex-direction : column;
+
+    background-color: rgb(255, 255, 255);
+    border-radius   : 8px;
+    width           : fit-content;
+}
+
+.output {
+    display       : flex;
+    flex-direction: row;
+    align-items   : center;
+    padding       : 1em;
+    font-size     : 1.08em;
+}
+
+.input-wrap {
+    display       : flex;
+    flex-direction: row;
+}
+
+body {
+    background-color: rgb(143, 143, 143);
+}
+
+input {
+    width  : fit-content;
+    border : 1px, solid, black;
+    padding: 0.25em;
+}

@@ -1,0 +1,32 @@
+.done>span {
+    color: rgb(151, 151, 151);
+}
+
+input.check {
+    height: 0.7em;
+    width : 0.7em;
+    margin: 0.4em;
+}
+
+.todo-wrapper {
+    /* margin         : 0.3em; */
+    display        : flex;
+    align-items    : center;
+    justify-content: start;
+    border         : 1px solid black;
+}
+
+.dlt_button {
+    background-color: rgba(255, 0, 0, 0.675);
+    width           : 60px;
+    height          : 35px;
+    font-size       : 0.7em;
+    border          : 0px solid black;
+    color           : white;
+    visibility      : hidden;
+    margin-left     : auto;
+}
+
+.hovered {
+    visibility: visible;
+}
