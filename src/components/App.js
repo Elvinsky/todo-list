@@ -7,11 +7,12 @@ import useInputValue from '../hooks/useInputValue';
 function App() {
     const [todos, setTodos] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [count, setCount] = useState();
     useEffect(() => {
         setIsLoading(true);
         setTimeout(() => {
             setIsLoading(false);
-            setTodos(generateTodos(500));
+            setTodos(generateTodos(20));
         }, 500);
     }, []);
     const [name, handleSetName, setName] = useInputValue();
@@ -29,15 +30,17 @@ function App() {
             setTodos([todo].concat(todos));
         }
     };
-    const handleSetDone = useCallback((done, id) => {
-        setTodos((currentTodos) => {
-            currentTodos.map((todo) =>
+    const handleSetDone = useCallback(
+        (done, id) => {
+            let buftodos = todos.map((todo) =>
                 todo.id === id ? {...todo, done} : todo
             );
-        });
-    }, []);
-    const handleDelete = (name) => {
-        setTodos(todos.filter((todo) => todo.name !== name));
+            setTodos(buftodos);
+        },
+        [todos]
+    );
+    const handleDelete = (id) => {
+        setTodos(todos.filter((todo) => todo.id !== id));
     };
     const isUnique = () => {
         let flag = true;
@@ -50,7 +53,10 @@ function App() {
         });
         return flag;
     };
-    const count = todos.length;
+    console.log(todos);
+    useEffect(() => {
+        setCount(todos.length);
+    }, [todos.length]);
     const doneCount = todos.filter((todo) => todo.done).length;
     if (isLoading) return <div>Loading...</div>;
     return (

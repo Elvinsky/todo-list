@@ -13,7 +13,7 @@ function Todo({name, id, onDone, onDelete, done}) {
         setStatus(false);
     };
     const handleDelete = () => {
-        onDelete(name);
+        onDelete(id);
     };
     return (
         <div

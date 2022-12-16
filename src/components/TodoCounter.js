@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
 import './TodoCounter.css';
-export default class TodoCounter extends Component {
-    render() {
-        return (
-            <div className="todostat-wrapper">
-                <p>Count: {this.props.count}</p>
-                <p>Completed: {this.props.done}</p>
-                <p>Left: {this.props.count - this.props.done}</p>
-            </div>
-        );
-    }
+function TodoCounter({count, done}) {
+    return (
+        <div className="todostat-wrapper">
+            <p>Count: {count}</p>
+            <p>Completed: {done}</p>
+            <p>Left: {count - done}</p>
+        </div>
+    );
 }
+
+export default TodoCounter;
